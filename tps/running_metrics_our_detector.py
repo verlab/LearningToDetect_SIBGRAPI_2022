@@ -150,9 +150,11 @@ for dataset in datasets:
     if not os.path.exists(loading_path):
         raise RuntimeError('There is no TPS directory in ' + loading_path)
     
+    ## Detect using our detector and describe with ASLfeat descriptor
     ref_score_map, ref_kps, ref_descriptors = our_detector.detect(ref_img_copy, MAX_KPS, f'{master}')
     ref_kps = [cv2.KeyPoint(int(kp[0]), int(kp[1]), 2) for kp in ref_kps]
     
+    # In case of using DEAL descriptor
     print(len(ref_kps))
     if deal_desc:
         print("deal")
