@@ -349,7 +349,7 @@ def match_pair(imgs, Hs, augmentor, pair_id):
         # gt2 = cv2.drawKeypoints(imgs_ori[i], kps_cv2_filter2, 0, (0, 255, 0), flags=cv2.DRAW_MATCHES_FLAGS_NOT_DRAW_SINGLE_POINTS)
         # cv2.imwrite(str(i)+"_pseudo-gt.png", gt2)  
 
-        print('acertou:', len(x_positives1))
+        print('rigth:', len(x_positives1))
         if len(x_positives1) < 32 or len(x_positives1) > 450:
             print("small or big number of correct matches")
             return
@@ -502,7 +502,7 @@ def main():
                                     out_resolution = (500, 400), 
                                     batch_size = 4
                                     )
-
+        # non-rigid difficulty
         difficulty = 0.2
         
         check_dir(args.output)
